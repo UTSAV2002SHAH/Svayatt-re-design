@@ -40,10 +40,10 @@ export default function Footer() {
               <span className="text-[11px] tracking-[0.12em] font-semibold uppercase mb-[16px]">
                 Platforms
               </span>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Unmanned Aerial
               </a>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Surface Systems
               </a>
             </div>
@@ -51,13 +51,13 @@ export default function Footer() {
               <span className="text-[11px] tracking-[0.12em] font-semibold uppercase mb-[16px]">
                 Products
               </span>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Svayatt M1
               </a>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Svayatt L1
               </a>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Svayatt TD-1
               </a>
             </div>
@@ -65,13 +65,13 @@ export default function Footer() {
               <span className="text-[11px] tracking-[0.12em] font-semibold uppercase mb-[16px]">
                 Company
               </span>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Our Vision
               </a>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Careers
               </a>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Contact
               </a>
             </div>
@@ -79,10 +79,10 @@ export default function Footer() {
               <span className="text-[11px] tracking-[0.12em] font-semibold uppercase mb-[16px]">
                 Media
               </span>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Newsroom
               </a>
-              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-gold transition-colors" href="#">
+              <a className="text-[13px] text-[#6b6660] leading-[2.5] hover:text-[#FF5A36] transition-colors" href="#">
                 Resources
               </a>
             </div>
@@ -93,10 +93,10 @@ export default function Footer() {
             © {new Date().getFullYear()} Paninian Technologies Pvt Ltd. All Rights Reserved.
           </div>
           <div className="flex gap-[24px]">
-            <a className="text-[12px] text-[#6b6660] hover:text-gold transition-colors" href="#">
+            <a className="text-[12px] text-[#6b6660] hover:text-[#FF5A36] transition-colors" href="#">
               Terms of Service
             </a>
-            <a className="text-[12px] text-[#6b6660] hover:text-gold transition-colors" href="#">
+            <a className="text-[12px] text-[#6b6660] hover:text-[#FF5A36] transition-colors" href="#">
               Privacy Policy
             </a>
           </div>
