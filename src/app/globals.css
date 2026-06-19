@@ -54,6 +54,8 @@
   --color-nav-link: #e8e6e2;
 
   --font-sans: var(--font-inter), sans-serif;
+  --font-display: var(--font-space), sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
 
   --animate-marquee: marquee 40s linear infinite;
 
@@ -113,4 +115,14 @@ body {
 
 .accordion-item[data-state="open"] .toggle-icon {
   transform: rotate(45deg);
+}
+
+@keyframes border-shine {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
 }

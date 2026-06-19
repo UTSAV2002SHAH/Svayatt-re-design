@@ -1,42 +1,47 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+import BentoNews from "./BentoNews";
 
 const newsItems = [
   {
     id: 0,
     logo: "/Aaj_tak_logo.png",
-    logoAlt: "DD News",
+    logoAlt: "Aaj Tak",
     title: "Paninian Technologies selected for DRDO co-development programme for next-generation autonomous combat systems",
-    image: "/Boeing_MQBAT_28.jpg",
+    image: "/svayatt.png",
     imageAlt: "DRDO Program",
+    meta: "12 MAR 2025 • NEW DELHI",
     description: "A landmark partnership between Paninian Technologies and DRDO marks a significant step in India's push toward indigenous autonomous defence systems. The collaboration focuses on developing next-generation combat aerial vehicles for the Indian armed forces.",
   },
   {
     id: 1,
     logo: "/Dd-news_logo.png",
-    logoAlt: "Aaj Tak",
+    logoAlt: "DD News",
     title: "Svayatt M1 completes first autonomous flight trial in controlled airspace over Rajasthan test range",
     image: "/Boeing_MQBAT_28.jpg",
     imageAlt: "Flight Trial",
+    meta: "14 JUNE 2026 • RAJASTHAN TEST RANGE",
     description: "The Svayatt M1 combat aerial vehicle successfully completed its first fully autonomous flight trial, demonstrating onboard navigation, obstacle avoidance, and mission execution without human intervention.",
   },
   {
     id: 2,
     logo: "/India_Today_TV_Channel_logo.jpg",
-    logoAlt: "NDTV",
+    logoAlt: "Times of India",
     title: "Paninian Technologies joins NVIDIA Inception Programme to accelerate AI-driven development",
     image: "/Boeing_MQBAT_28.jpg",
     imageAlt: "NVIDIA Inception",
+    meta: "08 SEP 2025 • BENGALURU",
     description: "Paninian Technologies has been selected for the NVIDIA Inception Programme, gaining access to cutting-edge GPU computing resources and AI development tools to accelerate onboard intelligence.",
   },
   {
     id: 3,
     logo: "/NDTV_logo.svg.png",
-    logoAlt: "Times of India",
+    logoAlt: "NDTV",
     title: "Godrej Aerospace and Paninian Technologies sign MoU for indigenous propulsion system",
-    image: "/Boeing_MQBAT_28.jpg",
+    image: "/svayattL1-3.png",
     imageAlt: "Godrej MoU",
+    meta: "22 JAN 2026 • MUMBAI",
     description: "Godrej Aerospace and Paninian Technologies have signed a Memorandum of Understanding to jointly develop indigenous propulsion systems for next-generation unmanned combat aerial vehicles.",
   },
 ];
@@ -72,23 +77,21 @@ export default function NewsMedia() {
   }, []);
 
   return (
-    <section className="w-full bg-[#000000] py-16 md:py-24 px-6 md:px-[64px]" id="news-media-section">
+    <section className="w-full bg-[#000000] py-8 md:py-16 px-6 md:px-[64px]" id="news-media-section">
       <div className=" mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4 w-full">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 w-full">
           <div className="">
             {/* <h2 className="font-sans font-semibold text-white text-[32px] md:text-[40px] ml-23 leading-tight text-[#16130f] px-2 mt-1">
               News & Media
             </h2> */}
 
-            <h2 ref={headingRef} className="font-sans font-[800] text-white m-0 p-0 leading-none">
+            <h2 ref={headingRef} className="font-display font-bold text-[64px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none">
               <div style={{ display: 'flex', alignItems: 'baseline' }}>
                 {"NEWSROOM".split("").map((letter, i) => (
                   <span
                     key={i}
                     style={{
                       display: 'inline-block',
-                      fontSize: '10vw',
-                      letterSpacing: '0.04em',
                       opacity: isVisible ? 1 : 0,
                       transform: isVisible ? 'translateY(0px)' : 'translateY(10px)',
                       transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.068}s,
@@ -102,82 +105,8 @@ export default function NewsMedia() {
             </h2>
           </div>
         </div>
-        <hr className="w-full mt-1 border-none mb-10" style={{ height: '15px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
-
-        <div className="flex flex-col max-w-[1800px] mx-auto border-t border-x border[#d4daea] border-3" id="news-accordion">
-          {newsItems.map((item) => {
-            const isOpen = openId === item.id;
-            return (
-              <div
-                key={item.id}
-                className="accordion-item border-b border-[#d4daea] px-5 bg-[#000000] text-white"
-                data-state={isOpen ? "open" : "closed"}
-              >
-                {/* Row — clicking anywhere opens this item */}
-                <button
-                  onClick={() => openAccordion(item.id)}
-                  className="accordion-header w-full py-3 flex items-center justify-between transition-colors duration-200 text-left cursor-pointer"
-                >
-                  <div className="flex flex-col md:flex-row md:items-center gap-6 flex-1 pr-8" >
-                    <img
-                      alt={item.logoAlt}
-                      className="h-8 md:h-10 w-auto object-contain opacity-85 align-middle shrink-0"
-                      src={item.logo}
-                    />
-                    <span className="font-sans font-medium text-[18px] md:text-[20px] leading-snug text-[#16130f] text-white">
-                      {item.title}
-                    </span>
-                  </div>
-
-                  {/* Stripe-style "Read Article" button — visible only on md+ */}
-                  <a
-                    href="#"
-                    onClick={(e) => e.stopPropagation()}
-                    className="hidden md:inline-flex items-center gap-2 shrink-0 border border-white text-white font-sans font-medium text-[12px] tracking-[0.08em] uppercase px-5 py-2.5 transition-all duration-200 hover:bg-[#9e9796] hover:text-white hover:border-[#1a1a18]"
-                    style={{ borderRadius: "6px" }}
-                  >
-                    Read Article
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 group-hover:translate-x-0.5">
-                      <path d="M1 6H11M11 6L7 2M11 6L7 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </a>
-                </button>
-
-                {/* Expandable content */}
-                <div className="accordion-content">
-                  <div className="accordion-inner bg-[#000000] text-white overflow-hidden" style={{ borderRadius: "6px" }}>
-                    <div className="flex flex-col lg:flex-row gap-8 pb-12 px-6 pt-2">
-                      <div className="lg:w-7/10">
-                        <img
-                          alt={item.imageAlt}
-                          className="w-full aspect-video object-cover border border-[#16130f]/5"
-                          style={{ borderRadius: "4px" }}
-                          src={item.image}
-                        />
-                      </div>
-                      <div className="lg:w-3/10 flex flex-col justify-start gap-6">
-                        <p className="font-sans font-normal text-[16px] leading-relaxed text-white pt-4">
-                          {item.description}
-                        </p>
-                        {/* Mobile Read Article button */}
-                        <a
-                          href="#"
-                          className="md:hidden inline-flex items-center gap-2 self-start border border-[#1a1a18]/30 text-[#1a1a18] font-sans font-medium text-[12px] tracking-[0.08em] uppercase px-5 py-2.5 transition-all duration-200 hover:bg-[#1a1a18] hover:text-white hover:border-[#1a1a18]"
-                          style={{ borderRadius: "6px" }}
-                        >
-                          Read Article
-                          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 6H11M11 6L7 2M11 6L7 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                          </svg>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
+        <hr className="w-full mt-1 border-none mb-10" style={{ height: '10px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
+        <BentoNews items={newsItems} />
       </div>
     </section>
   );

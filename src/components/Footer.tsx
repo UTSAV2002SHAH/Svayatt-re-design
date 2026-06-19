@@ -11,29 +11,28 @@ export default function Footer() {
               className="h-[24px] object-contain"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDM0mhyHL82dFYz0ZOyEBP8SZtp_72vVsJp4VyzAq06zFMP0nbcch0zclTQndLCKYRjd0ci9geQKJApSbtV7PwtO38a3_zi7roLMZmEMAoXsB4pQGBCiMW8yIO_2DVHB-fjrlI4uPChU01tOI4sjhAYk61jBs3rl5M9HxRspxGuOOCQ4Li8dDdj1QQ807UvDP4piVnW5p16_OhFBxs5iHg0Mxxt9q2xeCPz2CLdA1nQ9lsPTVZTjFQEDd5atVaNL9dnJz1mVq73pZXI"
             />
-            <p className="mt-[16px] text-[15px] font-normal text-[#3a3a38] max-w-[320px] leading-[1.6]">
+            <p className="mt-[16px] font-sans font-medium text-[16px] text-[#3a3a38] max-w-[320px] leading-[1.6]">
               The next generation platform for affordable autonomous aerial systems
             </p>
             <div className="flex gap-[12px] mt-[24px]">
               <button
-                className="border border-[#1a1a18] bg-transparent text-[#1a1a18] px-[20px] py-[10px] text-[12px] tracking-[0.1em] font-normal uppercase transition-colors hover:bg-[#1a1a18] hover:text-[#f0f0ef] cursor-pointer"
+                className="border border-[#1a1a18] bg-transparent text-[#1a1a18] px-[20px] py-[10px] text-[12px] tracking-[0.1em] font-normal uppercase transition-colors hover:bg-[#FF5A36] hover:border-[#f0f0ef] hover:text-[#f0f0ef] cursor-pointer"
                 style={{ borderRadius: "4px" }}
               >
                 Contact Us
               </button>
               <button
-                className="border border-[#1a1a18] bg-transparent text-[#1a1a18] px-[20px] py-[10px] text-[12px] tracking-[0.1em] font-normal uppercase transition-colors hover:bg-[#1a1a18] hover:text-[#f0f0ef] cursor-pointer"
+                className="border border-[#1a1a18] bg-transparent text-[#1a1a18] px-[20px] py-[10px] text-[12px] tracking-[0.1em] font-normal uppercase transition-colors hover:bg-[#FF5A36] hover:border-[#f0f0ef] hover:text-[#f0f0ef] cursor-pointer"
                 style={{ borderRadius: "4px" }}
               >
                 Open Roles
               </button>
             </div>
-            <div
-              className="mt-[24px] flex items-center bg-black px-4 py-2 text-white text-[11px] font-bold tracking-widest uppercase h-[48px]"
-              style={{ borderRadius: "4px" }}
-            >
-              Make In India
-            </div>
+            <img
+              alt="Make In India Logo"
+              className="mt-[24px] h-[130px] object-contain"
+              src="/Make_In_India.png"
+            />
           </div>
           <div className="md:w-[65%] grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
             <div className="flex flex-col">
@@ -89,14 +88,14 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-[80px] pt-[24px] border-t border-black/10 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="text-[12px] text-[#6b6660]">
+          <div className="font-mono font-normal text-[12px] tracking-[0.01em] text-[#6b6660]">
             © {new Date().getFullYear()} Paninian Technologies Pvt Ltd. All Rights Reserved.
           </div>
           <div className="flex gap-[24px]">
-            <a className="text-[12px] text-[#6b6660] hover:text-[#FF5A36] transition-colors" href="#">
+            <a className="font-mono font-normal text-[12px] tracking-[0.01em] text-[#6b6660] hover:text-[#FF5A36] transition-colors" href="#">
               Terms of Service
             </a>
-            <a className="text-[12px] text-[#6b6660] hover:text-[#FF5A36] transition-colors" href="#">
+            <a className="font-mono font-normal text-[12px] tracking-[0.01em] text-[#6b6660] hover:text-[#FF5A36] transition-colors" href="#">
               Privacy Policy
             </a>
           </div>

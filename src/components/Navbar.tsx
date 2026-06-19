@@ -1,146 +1,3 @@
-// "use client";
-
-// import { useEffect, useRef, useState } from "react";
-// import Link from "next/link";
-
-// export default function Navbar() {
-//   const [isScrolled, setIsScrolled] = useState(false);
-//   const [isHidden, setIsHidden] = useState(false);
-//   const [underlineStyle, setUnderlineStyle] = useState({
-//     width: "0px",
-//     transform: "translateX(0px)",
-//     opacity: 0,
-//   });
-
-//   const lastScrollY = useRef(0);
-//   const navContainerRef = useRef<HTMLDivElement>(null);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const currentScrollY = window.scrollY;
-
-//       if (currentScrollY > 50) {
-//         setIsScrolled(true);
-//       } else {
-//         setIsScrolled(false);
-//       }
-
-//       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
-//         setIsHidden(true);
-//       } else {
-//         setIsHidden(false);
-//       }
-
-//       lastScrollY.current = currentScrollY;
-//     };
-
-//     window.addEventListener("scroll", handleScroll, { passive: true });
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
-//     const linkEl = e.currentTarget;
-//     const containerEl = navContainerRef.current;
-//     if (linkEl && containerEl) {
-//       const rect = linkEl.getBoundingClientRect();
-//       const containerRect = containerEl.getBoundingClientRect();
-//       setUnderlineStyle({
-//         width: `${rect.width}px`,
-//         transform: `translateX(${rect.left - containerRect.left}px)`,
-//         opacity: 1,
-//       });
-//     }
-//   };
-
-//   const handleMouseLeave = () => {
-//     setUnderlineStyle((prev) => ({ ...prev, opacity: 0 }));
-//   };
-
-//   return (
-//     <header
-//       id="main-nav"
-//       style={{
-//         backgroundColor: isScrolled ? "rgba(12, 11, 10, 0.9)" : "transparent",
-//         backdropFilter: isScrolled ? "blur(12px)" : "none",
-//         transition: "transform 0.3s ease, background-color 0.3s ease",
-//       }}
-//       className={`fixed top-0 left-0 w-full z-50 flex items-center px-6 md:px-[64px] h-[68px] ${
-//         isHidden ? "-translate-y-full" : "translate-y-0"
-//       }`}
-//     >
-//       <div className="flex-none flex items-center">
-//         <img
-//           alt="Paninian Logo"
-//           className="h-[40px] object-contain brightness-0 invert"
-//           src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqB8GJ6tMXndhP5BiOWQzQ2oqWGtQNc7azHtnG1mMBC-jJ1Yi7Wjjc0XTc0Kepj_FoIjLMsRvWP6ggC-xki04VTR1_UmbaqtBiyL3AmIqTy97EUEaS8uMLnTZSWJTIvDQC4Z0AXaf6L5OVScF7d5YA5VIucmI00LgcJp5QExhpLmgMpu_fh19g84aIh-CBg0-7at_Ico_NFVV9uUc4LA_bTQHUhPPIr3BPoc-F7ulKCmSX31LSoMv-fxlNZwz4bOUG6Zt4hsKYFGZI"
-//         />
-//       </div>
-//       <div className="flex-grow flex justify-center">
-//         <nav
-//           ref={navContainerRef}
-//           onMouseLeave={handleMouseLeave}
-//           className="relative hidden md:flex items-center gap-[36px]"
-//           id="nav-container"
-//         >
-//           <Link
-//             onMouseEnter={handleMouseEnter}
-//             className="nav-link-item text-[13px] font-normal text-nav-gold"
-//             href="/"
-//           >
-//             Home
-//           </Link>
-//           <Link
-//             onMouseEnter={handleMouseEnter}
-//             className="nav-link-item text-[13px] font-normal text-nav-link hover:text-white transition-colors"
-//             href="#about-us"
-//           >
-//             About Us
-//           </Link>
-//           <Link
-//             onMouseEnter={handleMouseEnter}
-//             className="nav-link-item text-[13px] font-normal text-nav-link hover:text-white transition-colors"
-//             href="#products-section"
-//           >
-//             Aerial Platforms
-//           </Link>
-//           <Link
-//             onMouseEnter={handleMouseEnter}
-//             className="nav-link-item text-[13px] font-normal text-nav-link hover:text-white transition-colors"
-//             href="#products-section"
-//           >
-//             Power Plants
-//           </Link>
-//           <Link
-//             onMouseEnter={handleMouseEnter}
-//             className="nav-link-item text-[13px] font-normal text-nav-link hover:text-white transition-colors"
-//             href="#news-media-section"
-//           >
-//             Digital Platforms
-//           </Link>
-//           <Link
-//             onMouseEnter={handleMouseEnter}
-//             className="nav-link-item text-[13px] font-normal text-nav-link hover:text-white transition-colors"
-//             href="#news-media-section"
-//           >
-//             Manufacturing
-//           </Link>
-//           <div
-//             id="nav-underline"
-//             className="absolute bottom-[-2px] left-0 h-[2px] bg-nav-gold transition-all duration-300 pointer-events-none"
-//             style={{
-//               width: underlineStyle.width,
-//               transform: underlineStyle.transform,
-//               opacity: underlineStyle.opacity,
-//             }}
-//           />
-//         </nav>
-//       </div>
-//       <div className="flex-none w-[40px] hidden md:block"></div>
-//     </header>
-//   );
-// }
-
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
@@ -153,9 +10,9 @@ const DROPDOWN_ITEMS: Record<string, { name: string; href: string; img: string }
     { name: "Svayatt TD-1", href: "/aerial-platforms/svayattTD1", img: "/svayattTD1.jpg" },
   ],
   "Power Plants": [
-    { name: "Aero Engine", href: "/power-plants/aero-engine", img: "/Boeing_MQBAT_28.jpg" },
-    { name: "Marine Engine", href: "/power-plants/marine-engine", img: "https://www.svayatt.co.in/assets/images/marine.jpg" },
-    { name: "Ramjet", href: "/power-plants/ramjet", img: "https://www.svayatt.co.in/assets/images/ramjet.jpg" },
+    { name: "Aero Engine", href: "/power-plants/aero-engine", img: "/svayatt-aero.jpeg" },
+    { name: "Marine Engine", href: "/power-plants/marine-engine", img: "/svayatt-marine.jpeg" },
+    { name: "Ramjet", href: "/power-plants/ramjet", img: "/svayatt-ramjet.jpeg" },
   ],
   "Digital Platforms": [
     { name: "Kalman Intel", href: "/digital-platforms/kalman-intel", img: "https://www.svayatt.co.in/assets/images/kalman.jpg" },
@@ -166,7 +23,7 @@ const DROPDOWN_ITEMS: Record<string, { name: string; href: string; img: string }
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about-us" },
+  // { label: "About Us", href: "/about-us" },
   { label: "Aerial Platforms", href: "/aerial-platforms" },
   { label: "Power Plants", href: "/power-plants" },
   { label: "Digital Platforms", href: "/digital-platforms" },
@@ -265,7 +122,7 @@ export default function Navbar() {
                 key={label}
                 href={href}
                 onMouseEnter={(e) => handleMouseEnter(e, label)}
-                className={`nav-link-item text-[13px] font-normal transition-colors ${label === "Home" ? "text-nav-gold" : "text-nav-link hover:text-white"
+                className={`nav-link-item font-sans font-medium text-[14px] tracking-[0.02em] transition-colors ${label === "Home" ? "text-nav-gold" : "text-nav-link hover:text-white"
                   }`}
               >
                 {label}
@@ -288,11 +145,9 @@ export default function Navbar() {
 
       {/* Mega Menu Dropdown */}
       <div
-        onMouseEnter={handleDropdownMouseEnter}
-        onMouseLeave={handleDropdownMouseLeave}
         style={{
           opacity: activeDropdown ? 1 : 0,
-          pointerEvents: activeDropdown ? "auto" : "none",
+          pointerEvents: "none", // Blur wrapper ignores mouse entirely
           transform: activeDropdown ? "translateY(0)" : "translateY(-8px)",
           transition: "opacity 0.2s ease, transform 0.2s ease",
           top: "68px",
@@ -300,9 +155,16 @@ export default function Navbar() {
           backdropFilter: "blur(16px)",
           overflow: "hidden"
         }}
-        className="fixed left-0 w-full z-40"
+        className="fixed left-0 w-full h-[calc(100vh-68px)] z-40 flex justify-center"
       >
-        <div className="grid grid-cols-3 w-[80vw] mx-auto px-[10px]">
+        <div
+          onMouseEnter={handleDropdownMouseEnter}
+          onMouseLeave={handleDropdownMouseLeave}
+          style={{
+            pointerEvents: activeDropdown ? "auto" : "none", // Only the cards capture the mouse
+          }}
+          className="grid grid-cols-3 w-[80vw] h-max px-[10px]"
+        >
           {dropdownItems?.map((item, i) => (
             <DropdownCard key={item.name} item={item} isLast={i === dropdownItems.length - 1} />
           ))}
@@ -342,14 +204,15 @@ function DropdownCard({
           position: "absolute",
           inset: 0,
           backgroundImage: `url(${item.img})`,
-          backgroundSize: "cover",
+          backgroundSize: "contain",
           backgroundPosition: "center",
-          backgroundColor: "transparent",
+          backgroundRepeat: "no-repeat",
+          backgroundColor: "white",
         }}
       />
 
       {/* Bottom gradient for text legibility */}
-      <div
+      {/* <div
         style={{
           position: "absolute",
           bottom: 0,
@@ -359,7 +222,7 @@ function DropdownCard({
           background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
           pointerEvents: "none",
         }}
-      />
+      /> */}
       {/* Product name */}
       <div
         style={{
@@ -370,12 +233,10 @@ function DropdownCard({
         }}
       >
         <span
+          className="font-display font-semibold text-black text-[24px] md:text-[32px] tracking-[0.05em]"
           style={{
             display: "block",
-            fontSize: "22px",
-            fontWeight: 400,
-            letterSpacing: "0.02em",
-            color: hovered ? "#ffffff" : "rgba(255,255,255,0.75)",
+            // color: hovered ? "#ffffff" : "rgba(255,255,255,0.75)",
             transition: "color 0.25s ease",
             lineHeight: 1.2,
           }}
@@ -387,7 +248,7 @@ function DropdownCard({
         <div
           style={{
             marginTop: "8px",
-            height: "1px",
+            height: "3px",
             backgroundColor: "#C9A84C",
             width: hovered ? "100%" : "0%",
             transition: "width 0.3s ease",

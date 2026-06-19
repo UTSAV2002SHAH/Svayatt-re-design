@@ -38,13 +38,16 @@ export default function Products() {
               key={product.id}
               className={`p-[3px] ${product.gridClass}`}
               style={{
-                borderRadius: "6px",
-                background: "linear-gradient(135deg, #f0ece4 0%, #a8a7a5 20%, #e8e4dc 40%, #6b6a68 55%, #d0ccc4 75%, #a8a7a5 88%, #f0ece4 100%)",
+                // borderRadius: "6px",
+                // background: "linear-gradient(135deg, #f0ece4 0%, #a8a7a5 20%, #e8e4dc 40%, #6b6a68 55%, #d0ccc4 75%, #a8a7a5 88%, #f0ece4 100%)",
+                background: "linear-gradient(135deg, #ffffff 0%, #5a5a5d 20%, #e8e8ea 40%, #18181a 55%, #c8c8cc 75%, #5a5a5d 88%, #ffffff 100%)",
+                backgroundSize: "200% 200%",
+                animation: "border-shine 6s ease-in-out infinite alternate",
               }}
             >
               <Link
                 href={`/products/${product.id}`}
-                style={{ borderRadius: "4px" }}
+                // style={{ borderRadius: "4px" }}
                 className="group relative w-full h-full overflow-hidden cursor-pointer transition-all duration-300 block"
               >
                 <img
@@ -59,7 +62,7 @@ export default function Products() {
                   }}
                 />
                 <div className="absolute left-8 md:left-[48px] bottom-8 md:bottom-[48px] flex flex-col gap-1">
-                  <span className="font-semibold text-xl md:text-[28px] text-[#e8e6e2] tracking-[0.08em] font-sans leading-none uppercase">
+                  <span className="font-display font-semibold text-[24px] md:text-[32px] text-[#e8e6e2] tracking-[0.05em] leading-none uppercase">
                     {product.name}
                   </span>
                   <span className="font-normal text-xs md:text-[14px] font-sans text-white/70 max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out group-hover:max-h-12 group-hover:opacity-100 group-hover:mt-1">

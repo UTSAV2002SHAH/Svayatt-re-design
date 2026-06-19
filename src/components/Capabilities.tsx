@@ -53,16 +53,14 @@ const Capabilities = () => {
   ];
 
   return (
-    <section className="w-full bg-[#000000] px-[64px] py-[80px]" style={{ minHeight: '110vh' }}>
-      <h2 ref={headingRef} className="font-sans font-[800] text-white m-0 p-0 leading-none">
+    <section className="w-full bg-[#000000] px-[64px] pt-[80px]" style={{ minHeight: '90vh' }}>
+      <h2 ref={headingRef} className="font-display font-bold text-[64px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none">
         <div style={{ display: 'flex', alignItems: 'baseline' }}>
           {"CAPABILITIES".split("").map((letter, i) => (
             <span
               key={i}
               style={{
                 display: 'inline-block',
-                fontSize: '10vw',
-                letterSpacing: '0.04em',
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0px)' : 'translateY(10px)',
                 transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.068}s,
@@ -75,7 +73,7 @@ const Capabilities = () => {
         </div>
       </h2>
 
-      <hr className="w-full mt-1 border-none mb-10" style={{ height: '15px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
+      <hr className="w-full mt-1 border-none mb-10" style={{ height: '10px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
 
       <div className="flex flex-col w-full mt-0">
         {capabilities.map((cap) => (
@@ -84,13 +82,13 @@ const Capabilities = () => {
             className="flex flex-row items-center w-full"
             style={{ minHeight: '80px', borderBottom: '1px solid rgba(255,255,255,0.15)' }}
           >
-            <div className="w-[8%] font-sans font-[400] text-[13px]" style={{ color: 'rgba(255,255,255,0.45)', fontFamily: 'Inter, sans-serif' }}>
+            <div className="w-[8%] font-mono font-normal text-[14px]" style={{ color: 'rgba(255,255,255,0.45)' }}>
               {cap.id}
             </div>
-            <div className="w-[37%] font-sans font-[600] text-[22px] text-white" style={{ fontFamily: 'Inter, sans-serif' }}>
+            <div className="w-[37%] font-display font-medium text-[20px] md:text-[24px] text-white">
               {cap.name}
             </div>
-            <div className="w-[55%] font-sans font-[400] text-[14px]" style={{ color: 'rgba(255,255,255,0.6)', fontFamily: 'Inter, sans-serif' }}>
+            <div className="w-[55%] font-sans font-medium text-[16px]" style={{ color: 'rgba(255,255,255,0.6)' }}>
               {cap.description}
             </div>
           </div>
