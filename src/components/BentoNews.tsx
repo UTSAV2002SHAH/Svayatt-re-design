@@ -634,11 +634,269 @@
 // }
 
 
+// "use client";
+
+// import React, { useState, useEffect } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import GlowBorder from "../components/ui/GlowBorder";
+
+// export interface NewsItem {
+//   id: number;
+//   logo: string;
+//   logoAlt: string;
+//   title: string;
+//   image: string;
+//   imageAlt: string;
+//   description: string;
+//   meta: string;
+// }
+
+// interface BentoNewsProps {
+//   items: NewsItem[];
+// }
+
+// export default function BentoNews({ items }: BentoNewsProps) {
+//   const [expandedId, setExpandedId] = useState<number | null>(null);
+
+//   if (!items || items.length === 0) return null;
+
+//   return (
+//     <>
+//       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[1400px] mx-auto">
+//         {items.map((item, index) => {
+//           // 2-1 layout for first row, 1-2 layout for second row
+//           let colSpanClass = "md:col-span-1";
+//           if (index === 0) colSpanClass = "md:col-span-2";
+//           else if (index === 3) colSpanClass = "md:col-span-2";
+
+//           const isExpanded = expandedId === item.id;
+
+//           return (
+//             <GlowBorder
+//               key={item.id}
+//               className={colSpanClass}
+//               active={!isExpanded}
+//               onClick={() => setExpandedId(item.id)}
+//               glowRadius={140}
+//               glowThickness={2}
+//               glowBlur={1}
+//               ringColor="#1c1c1c"
+//               ringThickness={4}
+//             >
+//               <motion.div
+//                 layoutId={`card-${item.id}`}
+//                 className="group flex flex-col overflow-hidden h-full"
+//               >
+//                 {/* Header / Meta */}
+//                 <motion.div
+//                   layoutId={`header-${item.id}`}
+//                   className="p-6 pb-4 flex items-center gap-3"
+//                 >
+//                   <motion.img
+//                     layoutId={`logo-${item.id}`}
+//                     src={item.logo}
+//                     alt={item.logoAlt}
+//                     className="h-6 w-auto max-w-[80px] object-contain opacity-90 rounded-sm bg-white/5 p-1"
+//                   />
+//                   <motion.span
+//                     layoutId={`logoText-${item.id}`}
+//                     className="text-[11px] font-bold tracking-widest text-white/70 uppercase"
+//                   >
+//                     {item.logoAlt}
+//                   </motion.span>
+//                 </motion.div>
+
+//                 {/* Title */}
+//                 <motion.div
+//                   layoutId={`title-container-${item.id}`}
+//                   className="px-6 pb-4"
+//                 >
+//                   <motion.h3
+//                     layoutId={`title-${item.id}`}
+//                     className={`font-display font-bold text-white leading-tight ${index === 0 || index === 3
+//                       ? "text-2xl md:text-[32px]"
+//                       : "text-xl md:text-2xl"
+//                       }`}
+//                   >
+//                     {item.title}
+//                   </motion.h3>
+//                 </motion.div>
+
+//                 {/* Image */}
+//                 <motion.div
+//                   layoutId={`image-container-${item.id}`}
+//                   className={`relative w-full px-6 pb-4 ${index === 0 || index === 3
+//                     ? "h-48 md:h-64"
+//                     : "h-40 md:h-48"
+//                     }`}
+//                 >
+//                   <div className="w-full h-full rounded-xl overflow-hidden relative">
+//                     <motion.img
+//                       layoutId={`image-${item.id}`}
+//                       src={item.image}
+//                       alt={item.imageAlt}
+//                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+//                     />
+//                   </div>
+//                 </motion.div>
+
+//                 {/* Description */}
+//                 <motion.div
+//                   layoutId={`desc-${item.id}`}
+//                   className="px-6 pb-6 mt-auto"
+//                 >
+//                   <p className="font-sans text-[14px] md:text-[15px] text-gray-400 leading-relaxed line-clamp-3">
+//                     {item.description}
+//                   </p>
+//                 </motion.div>
+//               </motion.div>
+//             </GlowBorder>
+//           );
+//         })}
+//       </div>
+
+//       <AnimatePresence>
+//         {expandedId !== null && (
+//           <ExpandedCard
+//             item={items.find((i) => i.id === expandedId)!}
+//             onClose={() => setExpandedId(null)}
+//           />
+//         )}
+//       </AnimatePresence>
+//     </>
+//   );
+// }
+
+// // ─── Expanded overlay ──────────────────────────────────────────────────────────
+// function ExpandedCard({
+//   item,
+//   onClose,
+// }: {
+//   item: NewsItem;
+//   onClose: () => void;
+// }) {
+//   useEffect(() => {
+//     document.body.style.overflow = "hidden";
+//     return () => {
+//       document.body.style.overflow = "unset";
+//     };
+//   }, []);
+
+//   return (
+//     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
+//       {/* Backdrop */}
+//       <motion.div
+//         initial={{ opacity: 0 }}
+//         animate={{ opacity: 1 }}
+//         exit={{ opacity: 0 }}
+//         onClick={onClose}
+//         className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
+//       />
+
+//       {/* Expanded container */}
+//       <div className="relative w-full max-w-[1400px] h-full max-h-[90vh] mx-auto flex items-center justify-center pointer-events-none">
+//         <motion.div
+//           layoutId={`card-${item.id}`}
+//           className="flex flex-col overflow-hidden rounded-[20px] bg-[#0c0c0c] shadow-[0_0_40px_rgba(255,255,255,0.15)] border-2 w-full h-full max-h-[90vh] pointer-events-auto"
+//           style={{ scrollbarWidth: "none" }}
+//         >
+//           {/* Top Row: Logo · Title · Button */}
+//           <div className="p-4 md:p-6 pb-4 flex items-center justify-between gap-4 md:gap-8 bg-[#0c0c0c]/80 backdrop-blur-md z-10 shrink-0">
+//             <motion.div
+//               layoutId={`header-${item.id}`}
+//               className="flex flex-col items-center justify-center gap-2 shrink-0 min-w-[60px] md:min-w-[100px]"
+//             >
+//               <motion.img
+//                 layoutId={`logo-${item.id}`}
+//                 src={item.logo}
+//                 alt={item.logoAlt}
+//                 className="h-8 md:h-12 w-auto max-w-[100px] object-contain opacity-90 rounded-sm bg-white/5 p-1"
+//               />
+//               <motion.span
+//                 layoutId={`logoText-${item.id}`}
+//                 className="text-[9px] md:text-[11px] font-bold tracking-widest text-white/50 uppercase text-center hidden md:block"
+//               >
+//                 {item.logoAlt}
+//               </motion.span>
+//             </motion.div>
+
+//             <motion.div
+//               layoutId={`title-container-${item.id}`}
+//               className="flex-1"
+//             >
+//               <motion.h3
+//                 layoutId={`title-${item.id}`}
+//                 className="font-display font-bold text-white leading-tight text-[16px] md:text-[20px] lg:text-[28px]"
+//               >
+//                 {item.title}
+//               </motion.h3>
+//             </motion.div>
+
+//             <motion.button
+//               initial={{ opacity: 0, x: 20 }}
+//               animate={{ opacity: 1, x: 0 }}
+//               exit={{ opacity: 0, x: 20 }}
+//               onClick={onClose}
+//               className="group flex items-center justify-center gap-2 border border-white/20 text-white font-sans font-medium text-[10px] md:text-[12px] tracking-[0.08em] uppercase px-4 py-2 md:py-2.5 transition-all duration-200 hover:bg-[#FF5A36] hover:border-[#FF5A36] rounded-[6px] shrink-0"
+//             >
+//               <span className="whitespace-nowrap">Read Article</span>
+//               <svg
+//                 width="12"
+//                 height="12"
+//                 viewBox="0 0 12 12"
+//                 fill="none"
+//                 xmlns="http://www.w3.org/2000/svg"
+//                 className="transition-transform duration-200 group-hover:translate-x-0.5 shrink-0"
+//               >
+//                 <path
+//                   d="M1 6H11M11 6L7 2M11 6L7 10"
+//                   stroke="currentColor"
+//                   strokeWidth="1.5"
+//                   strokeLinecap="round"
+//                   strokeLinejoin="round"
+//                 />
+//               </svg>
+//             </motion.button>
+//           </div>
+
+//           {/* Image */}
+//           <motion.div
+//             layoutId={`image-container-${item.id}`}
+//             className="relative w-full px-4 md:px-6 pb-4 flex-1 min-h-[10px]"
+//           >
+//             <div className="w-full h-full rounded-xl overflow-hidden relative">
+//               <motion.img
+//                 layoutId={`image-${item.id}`}
+//                 src={item.image}
+//                 alt={item.imageAlt}
+//                 className="w-full h-full object-cover"
+//               />
+//             </div>
+//           </motion.div>
+
+//           {/* Description */}
+//           <motion.div
+//             layoutId={`desc-${item.id}`}
+//             className="px-4 md:px-6 pb-6 shrink-0"
+//           >
+//             <div className="font-sans text-[10px] md:text-[12px] font-bold tracking-[0.15em] text-white/50 uppercase mb-2">
+//               {item.meta}
+//             </div>
+//             <p className="font-sans text-[14px] md:text-[16px] lg:text-[18px] text-gray-300 leading-relaxed max-w-4xl whitespace-pre-wrap">
+//               {item.description}
+//             </p>
+//           </motion.div>
+//         </motion.div>
+//       </div>
+//     </div>
+//   );
+// }
+
 "use client";
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import GlowBorder from "../components/ui/GlowBorder";
+import GlowEffect from "@/components/ui/GlowBorder";
 
 export interface NewsItem {
   id: number;
@@ -664,7 +922,6 @@ export default function BentoNews({ items }: BentoNewsProps) {
     <>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-[1400px] mx-auto">
         {items.map((item, index) => {
-          // 2-1 layout for first row, 1-2 layout for second row
           let colSpanClass = "md:col-span-1";
           if (index === 0) colSpanClass = "md:col-span-2";
           else if (index === 3) colSpanClass = "md:col-span-2";
@@ -672,26 +929,39 @@ export default function BentoNews({ items }: BentoNewsProps) {
           const isExpanded = expandedId === item.id;
 
           return (
-            <GlowBorder
+            <div
               key={item.id}
-              className={colSpanClass}
-              active={!isExpanded}
               onClick={() => setExpandedId(item.id)}
-              glowRadius={140}
-              glowThickness={2}
-              glowBlur={1}
-              ringColor="#1c1c1c"
-              ringThickness={4}
+              className={`
+                ${colSpanClass}
+                relative rounded-[22px]
+                bg-[#1c1c1c]
+                p-[5px]
+                cursor-pointer
+                ${isExpanded ? "pointer-events-none" : ""}
+              `}
             >
+              <GlowEffect
+                disabled={isExpanded}
+                borderWidth={2}
+                proximity={140}
+                blur={1}
+                spread={60}
+              />
+
               <motion.div
                 layoutId={`card-${item.id}`}
-                className="group flex flex-col overflow-hidden h-full"
+                className={`
+                  relative z-10
+                  group flex flex-col overflow-hidden
+                  rounded-[18px] bg-black
+                  h-full
+                  transition-shadow duration-300
+                  hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]
+                  ${isExpanded ? "opacity-0 pointer-events-none" : ""}
+                `}
               >
-                {/* Header / Meta */}
-                <motion.div
-                  layoutId={`header-${item.id}`}
-                  className="p-6 pb-4 flex items-center gap-3"
-                >
+                <motion.div layoutId={`header-${item.id}`} className="p-6 pb-4 flex items-center gap-3">
                   <motion.img
                     layoutId={`logo-${item.id}`}
                     src={item.logo}
@@ -706,11 +976,7 @@ export default function BentoNews({ items }: BentoNewsProps) {
                   </motion.span>
                 </motion.div>
 
-                {/* Title */}
-                <motion.div
-                  layoutId={`title-container-${item.id}`}
-                  className="px-6 pb-4"
-                >
+                <motion.div layoutId={`title-container-${item.id}`} className="px-6 pb-4">
                   <motion.h3
                     layoutId={`title-${item.id}`}
                     className={`font-display font-bold text-white leading-tight ${index === 0 || index === 3
@@ -722,7 +988,6 @@ export default function BentoNews({ items }: BentoNewsProps) {
                   </motion.h3>
                 </motion.div>
 
-                {/* Image */}
                 <motion.div
                   layoutId={`image-container-${item.id}`}
                   className={`relative w-full px-6 pb-4 ${index === 0 || index === 3
@@ -740,17 +1005,13 @@ export default function BentoNews({ items }: BentoNewsProps) {
                   </div>
                 </motion.div>
 
-                {/* Description */}
-                <motion.div
-                  layoutId={`desc-${item.id}`}
-                  className="px-6 pb-6 mt-auto"
-                >
+                <motion.div layoutId={`desc-${item.id}`} className="px-6 pb-6 mt-auto">
                   <p className="font-sans text-[14px] md:text-[15px] text-gray-400 leading-relaxed line-clamp-3">
                     {item.description}
                   </p>
                 </motion.div>
               </motion.div>
-            </GlowBorder>
+            </div>
           );
         })}
       </div>
@@ -767,24 +1028,14 @@ export default function BentoNews({ items }: BentoNewsProps) {
   );
 }
 
-// ─── Expanded overlay ──────────────────────────────────────────────────────────
-function ExpandedCard({
-  item,
-  onClose,
-}: {
-  item: NewsItem;
-  onClose: () => void;
-}) {
+function ExpandedCard({ item, onClose }: { item: NewsItem; onClose: () => void }) {
   useEffect(() => {
     document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = "unset";
-    };
+    return () => { document.body.style.overflow = "unset"; };
   }, []);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-12">
-      {/* Backdrop */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -793,19 +1044,14 @@ function ExpandedCard({
         className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
       />
 
-      {/* Expanded container */}
       <div className="relative w-full max-w-[1400px] h-full max-h-[90vh] mx-auto flex items-center justify-center pointer-events-none">
         <motion.div
           layoutId={`card-${item.id}`}
           className="flex flex-col overflow-hidden rounded-[20px] bg-[#0c0c0c] shadow-[0_0_40px_rgba(255,255,255,0.15)] border-2 w-full h-full max-h-[90vh] pointer-events-auto"
           style={{ scrollbarWidth: "none" }}
         >
-          {/* Top Row: Logo · Title · Button */}
           <div className="p-4 md:p-6 pb-4 flex items-center justify-between gap-4 md:gap-8 bg-[#0c0c0c]/80 backdrop-blur-md z-10 shrink-0">
-            <motion.div
-              layoutId={`header-${item.id}`}
-              className="flex flex-col items-center justify-center gap-2 shrink-0 min-w-[60px] md:min-w-[100px]"
-            >
+            <motion.div layoutId={`header-${item.id}`} className="flex flex-col items-center justify-center gap-2 shrink-0 min-w-[60px] md:min-w-[100px]">
               <motion.img
                 layoutId={`logo-${item.id}`}
                 src={item.logo}
@@ -820,10 +1066,7 @@ function ExpandedCard({
               </motion.span>
             </motion.div>
 
-            <motion.div
-              layoutId={`title-container-${item.id}`}
-              className="flex-1"
-            >
+            <motion.div layoutId={`title-container-${item.id}`} className="flex-1">
               <motion.h3
                 layoutId={`title-${item.id}`}
                 className="font-display font-bold text-white leading-tight text-[16px] md:text-[20px] lg:text-[28px]"
@@ -840,30 +1083,13 @@ function ExpandedCard({
               className="group flex items-center justify-center gap-2 border border-white/20 text-white font-sans font-medium text-[10px] md:text-[12px] tracking-[0.08em] uppercase px-4 py-2 md:py-2.5 transition-all duration-200 hover:bg-[#FF5A36] hover:border-[#FF5A36] rounded-[6px] shrink-0"
             >
               <span className="whitespace-nowrap">Read Article</span>
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="transition-transform duration-200 group-hover:translate-x-0.5 shrink-0"
-              >
-                <path
-                  d="M1 6H11M11 6L7 2M11 6L7 10"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transition-transform duration-200 group-hover:translate-x-0.5 shrink-0">
+                <path d="M1 6H11M11 6L7 2M11 6L7 10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </motion.button>
           </div>
 
-          {/* Image */}
-          <motion.div
-            layoutId={`image-container-${item.id}`}
-            className="relative w-full px-4 md:px-6 pb-4 flex-1 min-h-[10px]"
-          >
+          <motion.div layoutId={`image-container-${item.id}`} className="relative w-full px-4 md:px-6 pb-4 flex-1 min-h-[10px]">
             <div className="w-full h-full rounded-xl overflow-hidden relative">
               <motion.img
                 layoutId={`image-${item.id}`}
@@ -874,11 +1100,7 @@ function ExpandedCard({
             </div>
           </motion.div>
 
-          {/* Description */}
-          <motion.div
-            layoutId={`desc-${item.id}`}
-            className="px-4 md:px-6 pb-6 shrink-0"
-          >
+          <motion.div layoutId={`desc-${item.id}`} className="px-4 md:px-6 pb-6 shrink-0">
             <div className="font-sans text-[10px] md:text-[12px] font-bold tracking-[0.15em] text-white/50 uppercase mb-2">
               {item.meta}
             </div>
