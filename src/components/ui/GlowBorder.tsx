@@ -191,7 +191,7 @@
 import React, { useRef, useEffect, useCallback } from "react";
 
 const DEFAULT_GLOW_STOPS = [
-    "#FFEDD5",
+    "#FFEDD5", //0eed4a
     "#F59E0B",
     "#FBBF24", //F59E0B
     "#F59E0B",
