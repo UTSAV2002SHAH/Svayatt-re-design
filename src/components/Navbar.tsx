@@ -207,7 +207,7 @@ function DropdownCard({
           backgroundSize: "contain",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          backgroundColor: "white",
+          backgroundColor: "#D1D1D1",
         }}
       />
 
@@ -227,7 +227,7 @@ function DropdownCard({
       <div
         style={{
           position: "absolute",
-          bottom: "28px",
+          bottom: "10px",
           left: "28px",
           right: "28px",
         }}
