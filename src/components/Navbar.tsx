@@ -15,9 +15,9 @@ const DROPDOWN_ITEMS: Record<string, { name: string; href: string; img: string }
     { name: "Ramjet", href: "/power-plants/ramjet", img: "/svayatt-ramjet.jpeg" },
   ],
   "Digital Platforms": [
-    { name: "Kalman Intel", href: "/digital-platforms/kalman-intel", img: "https://www.svayatt.co.in/assets/images/kalman.jpg" },
-    { name: "EntrophyHub", href: "/digital-platforms/entrophyhub", img: "https://www.svayatt.co.in/assets/images/entropy.jpg" },
-    { name: "AirVoxels", href: "/digital-platforms/airvoxels", img: "https://www.svayatt.co.in/assets/images/airvoxels.jpg" },
+    { name: "Kalman Intel", href: "/digital-platforms/kalman-intel", img: "/Kalman-Intel.png" },
+    { name: "EntrophyHub", href: "/digital-platforms/entrophyhub", img: "/Entropy-Hub.png" },
+    { name: "AirVoxels", href: "/digital-platforms/airvoxels", img: "/Air-Voxels.png" },
   ],
 };
 
