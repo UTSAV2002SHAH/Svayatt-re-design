@@ -3,7 +3,7 @@
 export default function Hero() {
   return (
     <section className="relative h-[80vh] md:h-screen w-full flex items-center" id="hero">
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 ">
         <video
           autoPlay
           loop
@@ -17,7 +17,7 @@ export default function Hero() {
           />
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a0c0f]/95 via-[#0a0c0f]/50 to-transparent"></div>
-        <div className="absolute bottom-0 left-0 w-full h-[20%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-full h-[10%] bg-gradient-to-b from-transparent to-black pointer-events-none"></div>
       </div>
     </section>
   );

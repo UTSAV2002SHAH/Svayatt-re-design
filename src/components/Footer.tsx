@@ -210,10 +210,10 @@ export default function Footer() {
             affordable autonomous aerial systems
           </p>
           <div className="flex gap-3">
-            <button className="px-4 py-2 border border-gray-500 text-gray-600 text-xs font-semibold tracking-wide rounded hover:bg-gray-200 transition">
+            <button className="px-4 py-2 border border-gray-500 text-gray-600 text-xs font-semibold tracking-wide rounded hover:bg-[#ff6343] hover:text-white hover:border-0 transition">
               CONTACT US
             </button>
-            <button className="px-4 py-2 border border-gray-500 text-gray-600 text-xs font-semibold tracking-wide rounded hover:bg-gray-200 transition">
+            <button className="px-4 py-2 border border-gray-500 text-gray-600 text-xs font-semibold tracking-wide rounded hover:bg-[#ff6343] hover:text-white hover:border-0 transition">
               OPEN ROLES
             </button>
           </div>
@@ -226,25 +226,25 @@ export default function Footer() {
         <div className="flex flex-wrap gap-10 md:gap-12 lg:gap-16">
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold text-gray-600 tracking-wide uppercase">PLATFORMS</h4>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Unmanned Aerial</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Surface Systems</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Unmanned Aerial</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Surface Systems</a>
           </div>
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold text-gray-600 tracking-wide uppercase">PRODUCTS</h4>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Svayatt M1</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Svayatt L1</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Svayatt TD-1</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Svayatt M1</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Svayatt L1</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Svayatt TD-1</a>
           </div>
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold text-gray-600 tracking-wide uppercase">COMPANY</h4>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Our Vision</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Careers</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Contact</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Our Vision</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Careers</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Contact</a>
           </div>
           <div className="flex flex-col gap-2.5">
             <h4 className="text-[11px] font-bold text-gray-600 tracking-wide uppercase">MEDIA</h4>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Newsroom</a>
-            <a href="#" className="text-xs text-gray-500 hover:text-[#4a90a4] transition">Resources</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Newsroom</a>
+            <a href="#" className="text-xs text-gray-500 hover:text-[#ff6343] transition">Resources</a>
           </div>
         </div>
       </div>
