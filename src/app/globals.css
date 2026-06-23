@@ -1,6 +1,16 @@
+/* ============================================
+   IMPORTS — MUST BE FIRST
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
-@theme {
+
+/* ============================================
+   TAILWIND THEME (commented out as in original)
+   ============================================ */
+
+/* @theme {
   --color-base: #16130f;
   --color-surface: #16130f;
   --color-surface-dim: #16130f;
@@ -68,7 +78,12 @@
       transform: translateX(-50%);
     }
   }
-}
+} */
+
+
+/* ============================================
+   BASE / ROOT STYLES
+   ============================================ */
 
 :root {
   background-color: #16130f;
@@ -84,6 +99,11 @@ body {
   font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
 }
 
+
+/* ============================================
+   SCROLL REVEAL (existing — unchanged)
+   ============================================ */
+
 .scroll-reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -94,6 +114,11 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+
+/* ============================================
+   ACCORDION (existing — unchanged)
+   ============================================ */
 
 .accordion-content {
   display: grid;
@@ -117,6 +142,11 @@ body {
   transform: rotate(45deg);
 }
 
+
+/* ============================================
+   BORDER SHINE (existing — unchanged)
+   ============================================ */
+
 @keyframes border-shine {
   0% {
     background-position: 0% 0%;
@@ -125,4 +155,33 @@ body {
   100% {
     background-position: 100% 100%;
   }
+}
+
+
+/* ============================================
+   SVAYATT HERO — NEW ANIMATIONS
+   ============================================ */
+
+@layer utilities {
+  .clip-reveal-hidden {
+    clip-path: inset(100% 0 0 0);
+  }
+
+  .clip-reveal-visible {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes ken-burns {
+  0% {
+    transform: scale(1.08) translateX(-1%);
+  }
+
+  100% {
+    transform: scale(1.0) translateX(1%);
+  }
+}
+
+.animate-ken-burns {
+  animation: ken-burns 20s linear infinite alternate;
 }

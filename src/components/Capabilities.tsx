@@ -55,8 +55,8 @@ const Capabilities = () => {
   return (
     <section className="w-full bg-[#000000] px-[64px] pt-[80px]" style={{ minHeight: '90vh' }}>
       <h2 ref={headingRef} className="font-display font-bold text-[64px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none">
-        <div style={{ display: 'flex', alignItems: 'baseline' }}>
-          {"CAPABILITIES".split("").map((letter, i) => (
+        <div className="mt-[80px]" style={{ display: 'flex', alignItems: 'baseline' }}>
+          {"PROCESSING CAPABILITIES".split("").map((letter, i) => (
             <span
               key={i}
               style={{
@@ -64,10 +64,11 @@ const Capabilities = () => {
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translateY(0px)' : 'translateY(10px)',
                 transition: `opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.068}s,
-                       transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.068}s`,
+             transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) ${i * 0.068}s`,
+                width: letter === " " ? "0.3em" : "auto", // Optional: consistent space width
               }}
             >
-              {letter}
+              {letter === " " ? "\u00A0" : letter}
             </span>
           ))}
         </div>
