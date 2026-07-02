@@ -53,10 +53,10 @@ const Capabilities = () => {
   ];
 
   return (
-    <section className="w-full bg-[#000000] px-[64px] pt-[80px]" style={{ minHeight: '90vh' }}>
+    <section className="w-full bg-[#000000] px-[64px] pt-[80px] mb-[80px]" style={{ minHeight: '90vh' }}>
       <h2 ref={headingRef} className="font-display font-bold text-[64px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none">
         <div className="mt-[80px]" style={{ display: 'flex', alignItems: 'baseline' }}>
-          {"PROCESSING CAPABILITIES".split("").map((letter, i) => (
+          {"5G PROCESSES".split("").map((letter, i) => (
             <span
               key={i}
               style={{
