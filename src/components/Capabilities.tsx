@@ -5,23 +5,25 @@ import React, { useEffect, useRef, useState } from "react";
 const Capabilities = () => {
   const headingRef = useRef<HTMLHeadingElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const hasAnimated = useRef(false);  // ← track if animation already played
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // Toggle based on intersection so it triggers every time it comes into view
-        setIsVisible(entry.isIntersecting);
+        // Only trigger if intersecting AND animation hasn't played yet
+        if (entry.isIntersecting && !hasAnimated.current) {
+          setIsVisible(true);
+          hasAnimated.current = true;  // ← lock it
+        }
+        // No else — we never set back to false
       },
       {
         threshold: 0.1,
-        // -25% bottom margin means it won't trigger until the element is 25% up from the bottom of the screen.
-        // This prevents it from finishing before you can really see it.
         rootMargin: "0px 0px -5% 0px"
       }
     );
 
     if (headingRef.current) observer.observe(headingRef.current);
-
     return () => observer.disconnect();
   }, []);
   const capabilities = [
