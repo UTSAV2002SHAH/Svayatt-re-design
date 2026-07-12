@@ -9,10 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 function MissionStatement() {
   return (
-    <div className="px-8 md:px-16 lg:px-24 py-16 md:py-24 max-w-[1440px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 items-start">
+    <div className="px-8 md:px-16 lg:px-24 py-8 md:py-24 max-w-[1440px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 items-start">
       <div className="md:w-2/3">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans text-white leading-tight">
-          Revolutionizing Aerospace & Defence by exceeding Engineering Limits  and enhancing mission effectiveness in high-threat environments, with focus on Affordability, Modularity, and Adaptability
+          Revolutionizing Aerospace & Defence by exceeding Engineering Limits  and enhancing mission effectiveness in high-threat environments, with a focus on Affordability, Modularity, and Adaptability
         </h2>
       </div>
       <div className="md:w-1/3 flex flex-col items-start gap-6">
@@ -36,6 +36,9 @@ function ImageBlock() {
     const text = textRef.current;
     if (!section || !text) return;
 
+    // Disable pin on mobile — only use on md+ screens
+    const isMobile = window.innerWidth < 768;
+
     const ctx = gsap.context(() => {
       // Start text hidden below the mask
       gsap.set(text, { y: "100%" });
@@ -44,9 +47,9 @@ function ImageBlock() {
         trigger: section,
         start: "center center",
         end: "+=20%",
-        pin: true,
-        pinSpacing: true,
-        anticipatePin: 1,
+        pin: !isMobile,
+        pinSpacing: !isMobile,
+        anticipatePin: isMobile ? 0 : 1,
         invalidateOnRefresh: true,
 
         onEnter: () => {
@@ -72,14 +75,14 @@ function ImageBlock() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-[90vh] w-[80vw] m-auto overflow-hidden bg-[#16130f]"
+      className="relative w-[95vw] lg:w-[90vw] lg:h-[90vh] h-[50vh] md:h-[70vh] lg:aspect-video m-auto overflow-hidden bg-[#16130f] rounded-xl md:rounded-2xl"
     >
       {/* Background image with Ken Burns zoom */}
       <div className="absolute inset-0">
         <img
           src="/svayatt-m1.jpeg"
           alt="Svayatt-M1 CCAV in flight"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-center"
         />
       </div>
 
@@ -90,7 +93,7 @@ function ImageBlock() {
       >
         <div
           ref={textRef}
-          className="font-[family-name:var(--font-orbitron)] text-6xl font-medium tracking-tight text-white md:text-8xl lg:text-9xl"
+          className="font-[family-name:var(--font-orbitron)] text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight text-white"
           style={{ willChange: "transform" }}
         >
           SVAYATT-M1
@@ -104,9 +107,10 @@ export default function Products() {
   return (
     <div className="w-full mt-[50px] bg-[#000000]">
       {/* Thin white ruler separating Hero and Mission */}
-      <div className="w-[95vw] m-auto h-[1px] bg-white"></div>
+      <div className="w-[95vw] m-auto h-[1px] bg-gray-400 mt-4"></div>
       <MissionStatement />
-      <div className="pb-24">
+      <div className="w-[95vw] md:hidden m-auto h-[1px] bg-gray-400 mb-4"></div>
+      <div className="pb-[40px]]">
         <ImageBlock />
       </div>
     </div>

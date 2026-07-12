@@ -197,8 +197,8 @@ export default function NewsMedia() {
       <div className=" mx-auto">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 w-full">
           <div className="">
-            <h2 ref={headingRef} className="font-display font-bold text-[64px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none">
-              <div style={{ display: 'flex', alignItems: 'baseline' }}>
+            <h2 ref={headingRef} className="font-bold text-[40px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none" style={{ fontFamily: 'var(--font-alte-haas)' }}>
+              <div style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap' }}>
                 {"NEWSROOM".split("").map((letter, i) => (
                   <span
                     key={i}
@@ -217,7 +217,7 @@ export default function NewsMedia() {
             </h2>
           </div>
         </div>
-        <hr className="w-full mt-1 border-none mb-10" style={{ height: '10px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
+        <hr className="w-full mt-1 border-none mb-5 md:mb-10" style={{ height: '10px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
         <BentoNews items={newsItems} />
       </div>
     </section>

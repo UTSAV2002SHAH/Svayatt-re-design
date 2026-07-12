@@ -3,7 +3,7 @@
 export default function Hero() {
   return (
     <section className="relative h-[80vh] md:h-screen w-full flex items-center" id="hero">
-      <div className="absolute m-auto top-10 w-[90vw] h-[85vh] inset-0 z-0">
+      <div className="absolute m-auto top-10 md:w-[90vw] h-[85vh] inset-0 z-0">
         <video
           autoPlay
           loop

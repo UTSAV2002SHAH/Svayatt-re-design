@@ -5,6 +5,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
+/* ============================================
+   ALTE HAAS GROTESK — LOCAL-STYLE LOAD VIA CDN
+   ============================================ */
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGrotesk.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGrotesk.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGroteskBold.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGroteskBold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --font-alte-haas: 'Alte Haas Grotesk', sans-serif;
+}
+
 
 /* ============================================
    TAILWIND THEME (commented out as in original)

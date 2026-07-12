@@ -55,9 +55,9 @@ const Capabilities = () => {
   ];
 
   return (
-    <section className="w-full bg-[#000000] px-[64px] pt-[80px] mb-[80px]" style={{ minHeight: '90vh' }}>
-      <h2 ref={headingRef} className="font-display font-bold text-[64px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none">
-        <div className="mt-[80px]" style={{ display: 'flex', alignItems: 'baseline' }}>
+    <section className="w-full bg-[#000000] px-6 md:px-[64px] pt-6 md:pt-[80px] pb-8 md:pb-[80px] md:min-h-[90vh] md:flex md:flex-col">
+      <h2 ref={headingRef} className="font-bold text-[40px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none" style={{ fontFamily: 'var(--font-alte-haas)' }}>
+        <div className="mt-4 md:mt-[80px]" style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap' }}>
           {"5G PROCESSES".split("").map((letter, i) => (
             <span
               key={i}
@@ -76,22 +76,25 @@ const Capabilities = () => {
         </div>
       </h2>
 
-      <hr className="w-full mt-1 border-none mb-10" style={{ height: '10px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
+      <hr className="w-full mt-1 border-none mb-4 md:mb-10" style={{ height: '10px', backgroundColor: 'rgba(252, 248, 248, 1)' }} />
 
-      <div className="flex flex-col w-full mt-0">
+      <div className="flex flex-col w-full mt-0 md:flex-1">
         {capabilities.map((cap) => (
           <div
             key={cap.id}
-            className="flex flex-row items-center w-full"
-            style={{ minHeight: '80px', borderBottom: '1px solid rgba(255,255,255,0.15)' }}
+            className="flex flex-col md:flex-row md:items-center w-full py-3 md:flex-1"
+            style={{ borderBottom: '1px solid rgba(255,255,255,0.15)' }}
           >
-            <div className="w-[8%] font-mono font-normal text-[14px]" style={{ color: 'rgba(255,255,255,0.45)' }}>
-              {cap.id}
+            {/* Mobile: number + name in one row; Desktop: separate columns */}
+            <div className="flex flex-row items-baseline gap-3 md:contents">
+              <div className="md:w-[8%] font-mono font-normal text-[12px] md:text-[16px] lg:text-[18px] shrink-0" style={{ color: 'rgba(255,255,255,0.45)' }}>
+                {cap.id}
+              </div>
+              <div className="md:w-[37%] font-display font-medium text-[18px] md:text-[26px] lg:text-[32px] text-white md:mb-0">
+                {cap.name}
+              </div>
             </div>
-            <div className="w-[37%] font-display font-medium text-[20px] md:text-[24px] text-white">
-              {cap.name}
-            </div>
-            <div className="w-[55%] font-sans font-medium text-[16px]" style={{ color: 'rgba(255,255,255,0.6)' }}>
+            <div className="w-full md:w-[55%] font-sans font-medium text-[14px] md:text-[16px] lg:text-[18px] mt-1 md:mt-0" style={{ color: 'rgba(255,255,255,0.6)' }}>
               {cap.description}
             </div>
           </div>
