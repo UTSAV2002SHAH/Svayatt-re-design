@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function MissionStatement() {
   return (
-    <div className="px-8 md:px-16 lg:px-24 py-8 md:py-24 max-w-[1440px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 items-start">
+    <div className="px-8 md:px-16 lg:px-24 py-8 md:py-10 max-w-[1440px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 items-start">
       <div className="md:w-2/3">
         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-sans text-white leading-tight">
           Revolutionizing Aerospace & Defence by exceeding Engineering Limits  and enhancing mission effectiveness in high-threat environments, with a focus on Affordability, Modularity, and Adaptability
@@ -109,7 +109,7 @@ export default function Products() {
       {/* Thin white ruler separating Hero and Mission */}
       <div className="w-[95vw] m-auto h-[1px] bg-gray-400 mt-4"></div>
       <MissionStatement />
-      <div className="w-[95vw] md:hidden m-auto h-[1px] bg-gray-400 mb-4"></div>
+      {/* <div className="w-[95vw] md:hidden m-auto h-[1px] bg-gray-400 mb-4"></div> */}
       <div className="pb-[40px]]">
         <ImageBlock />
       </div>
