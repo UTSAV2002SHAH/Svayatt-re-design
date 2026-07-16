@@ -11,7 +11,7 @@
 @font-face {
   font-family: 'Alte Haas Grotesk';
   src: url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGrotesk.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGrotesk.woff') format('woff');
+    url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGrotesk.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -20,7 +20,7 @@
 @font-face {
   font-family: 'Alte Haas Grotesk';
   src: url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGroteskBold.woff2') format('woff2'),
-       url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGroteskBold.woff') format('woff');
+    url('https://cdn.jsdelivr.net/gh/phoikoi/AlteHaasGrotesk@1.0/AlteHaasGroteskBold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

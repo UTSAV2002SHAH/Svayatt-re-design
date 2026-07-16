@@ -63,12 +63,14 @@ export default function Footer() {
       </div>
 
       {/* 3) Svayatt watermark — full width, ghost-like, clipped at bottom */}
-      <div className="w-full h-[80px] sm:h-[80px] md:h-[100px] lg:h-[280px] relative overflow-hidden flex justify-center items-end">
-        <span
-          className="bottom-0 text-[14vw] font-medium font-[family-name:var(--font-orbitron)] text-[#D3D3D3] tracking-[0.030em] leading-none whitespace-nowrap inline-block origin-bottom scale-y-[1.5]"
-        >
-          SVAYATT
-        </span>
+      <div className="w-full h-0 sm:h-0 md:h-[100px] lg:h-[410px] relative overflow-hidden hidden md:flex justify-center items-end">
+        <img
+          src="/svayatt-watermark-2.png"
+          alt=""
+          aria-hidden="true"
+          className="h-[240%] w-full max-w-none object-contain select-none pointer-events-none opacity-40"
+          style={{ transform: "translateY(30%)" }}
+        />
       </div>
     </footer>
   );
