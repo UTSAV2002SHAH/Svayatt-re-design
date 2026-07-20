@@ -93,10 +93,11 @@ function ImageBlock() {
       >
         <div
           ref={textRef}
-          className="font-[family-name:var(--font-orbitron)] text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight text-white"
+          className="flex flex-col items-center"
           style={{ willChange: "transform" }}
         >
-          SVAYATT-M1
+          <div className="font-[family-name:var(--font-orbitron)] text-3xl sm:text-5xl md:text-7xl lg:text-9xl font-medium tracking-tight text-white">SVAYATT-M1</div>
+          <div className="bg-transparent font-[family-name:var(--font-orbitron)] text-white ">Collaborative Combat Aerial Vehicle</div>
         </div>
       </div>
     </section>
