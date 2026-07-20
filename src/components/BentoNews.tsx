@@ -935,8 +935,8 @@ export default function BentoNews({ items }: BentoNewsProps) {
               className={`
                 ${colSpanClass}
                 relative rounded-[22px]
-                bg-[#1c1c1c]
-                p-[5px]
+                bg-[#131313]
+                p-[10px]
                 cursor-pointer
                 ${isExpanded ? "pointer-events-none" : ""}
               `}
@@ -954,7 +954,7 @@ export default function BentoNews({ items }: BentoNewsProps) {
                 className={`
                   relative z-10
                   group flex flex-col overflow-hidden
-                  rounded-[18px] bg-black
+                  rounded-[18px] bg-[#000000]
                   h-full
                   transition-shadow duration-300
                   hover:shadow-[0_0_30px_rgba(255,255,255,0.05)]
@@ -966,11 +966,11 @@ export default function BentoNews({ items }: BentoNewsProps) {
                     layoutId={`logo-${item.id}`}
                     src={item.logo}
                     alt={item.logoAlt}
-                    className="h-6 w-auto max-w-[80px] object-contain opacity-90 rounded-sm bg-white/5 p-1"
+                    className="h-12 w-auto max-w-[80px] object-contain opacity-90 rounded-sm bg-white p-1"
                   />
                   <motion.span
                     layoutId={`logoText-${item.id}`}
-                    className="text-[11px] font-bold tracking-widest text-white/70 uppercase"
+                    className="text-[14px] font-bold tracking-widest text-white uppercase"
                   >
                     {item.logoAlt}
                   </motion.span>
@@ -1005,11 +1005,11 @@ export default function BentoNews({ items }: BentoNewsProps) {
                   </div>
                 </motion.div>
 
-                <motion.div layoutId={`desc-${item.id}`} className="px-6 pb-6 mt-auto">
+                {/* <motion.div layoutId={`desc-${item.id}`} className="px-6 pb-6 mt-auto">
                   <p className="font-sans text-[14px] md:text-[15px] text-gray-400 leading-relaxed line-clamp-3">
                     {item.description}
                   </p>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </div>
           );
