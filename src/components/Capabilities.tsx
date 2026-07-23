@@ -55,7 +55,7 @@ const Capabilities = () => {
   ];
 
   return (
-    <section className="w-full bg-[#000000] px-6 md:px-[64px] pt-6 md:pt-[80px] pb-8 md:pb-[80px] md:min-h-[90vh] md:flex md:flex-col">
+    <section className="w-full bg-[#000000] mt-8 px-6 md:px-[64px] pt-6 md:pt-[80px] pb-8 md:pb-[80px] md:min-h-[90vh] md:flex md:flex-col">
       <h2 ref={headingRef} className="font-bold text-[40px] md:text-[80px] tracking-[-0.02em] text-white m-0 p-0 leading-none" style={{ fontFamily: 'var(--font-alte-haas)' }}>
         <div className="mt-4 md:mt-[80px]" style={{ display: 'flex', alignItems: 'baseline', flexWrap: 'wrap' }}>
           {"5G PROCESSES".split("").map((letter, i) => (
