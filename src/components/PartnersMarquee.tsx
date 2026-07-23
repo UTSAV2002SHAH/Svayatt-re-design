@@ -29,25 +29,25 @@ const partners = [
 
 export default function PartnersMarquee() {
   return (
-    <section className="bg-white py-[80px] w-full overflow-hidden">
+    <section className="bg-white py-[40px] md:py-[80px] w-full overflow-hidden">
       <div className="px-6 md:px-[64px] max-w-[1440px] mx-auto">
-        <h2 className="font-sans font-semibold text-[32px] text-[#1a3a6b] leading-tight">
+        <h2 className="font-sans font-semibold text-[24px] md:text-[32px] text-[#1a3a6b] leading-tight">
           Our Growth Partners
         </h2>
-        <p className="font-sans font-normal text-[16px] text-[#6b6660] mt-2">
+        <p className="font-sans font-normal text-[14px] md:text-[16px] text-[#6b6660] mt-2">
           Trusted by India's leading defence and technology institutions
         </p>
       </div>
-      <div className="h-[0.5px] bg-black/10 w-full mt-[40px] mb-[60px]"></div>
+      <div className="h-[0.5px] bg-black/10 w-full mt-[30px] md:mt-[40px] mb-[40px] md:mb-[60px]"></div>
       <div className="marquee-container w-full overflow-hidden relative group">
         {/* Single flat flex row — gap is uniform so the seam between set 1 and set 2 matches */}
-        <div className="animate-marquee flex items-center gap-[80px] pl-[80px] group-hover:[animation-play-state:paused]">
+        <div className="animate-marquee flex items-center gap-[40px] md:gap-[80px] lg:gap-[160px] pl-[40px] md:pl-[80px] lg:pl-[160px] group-hover:[animation-play-state:paused]">
           {/* Set 1 */}
           {partners.map((partner, idx) => (
             <img
               key={`set1-${idx}`}
               alt={partner.name}
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain h-[52px] w-auto shrink-0"
+              className="opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain h-[36px] md:h-[52px] lg:h[72px] w-auto shrink-0"
               src={partner.src}
             />
           ))}
@@ -56,7 +56,7 @@ export default function PartnersMarquee() {
             <img
               key={`set2-${idx}`}
               alt={partner.name}
-              className="opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain h-[52px] w-auto shrink-0"
+              className="opacity-70 hover:opacity-100 transition-opacity duration-300 object-contain h-[36px] md:h-[52px] w-auto shrink-0"
               src={partner.src}
             />
           ))}
