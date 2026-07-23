@@ -128,6 +128,7 @@ const newsItems = [
     imageAlt: "DRDO Program",
     meta: "12 MAR 2025 • NEW DELHI",
     description: "A landmark partnership between Paninian Technologies and DRDO marks a significant step in India's push toward indigenous autonomous defence systems. The collaboration focuses on developing next-generation combat aerial vehicles for the Indian armed forces.",
+    link: "https://economictimes.indiatimes.com/tech/startups/indian-start-up-achieves-break-through-in-aero-engine-design-with-digital-twin/articleshow/93517416.cms?from=mdr",
   },
   {
     id: 1,
@@ -138,6 +139,7 @@ const newsItems = [
     imageAlt: "Flight Trial",
     meta: "14 JUNE 2026 • RAJASTHAN TEST RANGE",
     description: "The Svayatt M1 combat aerial vehicle successfully completed its first fully autonomous flight trial, demonstrating onboard navigation, obstacle avoidance, and mission execution without human intervention.",
+    link: "https://economictimes.indiatimes.com/tech/startups/indian-start-up-achieves-break-through-in-aero-engine-design-with-digital-twin/articleshow/93517416.cms?from=mdr",
   },
   {
     id: 2,
@@ -148,6 +150,7 @@ const newsItems = [
     imageAlt: "NVIDIA Inception",
     meta: "08 SEP 2025 • BENGALURU",
     description: "Paninian Technologies has been selected for the NVIDIA Inception Programme, gaining access to cutting-edge GPU computing resources and AI development tools to accelerate onboard intelligence.",
+    link: "https://economictimes.indiatimes.com/tech/startups/indian-start-up-achieves-break-through-in-aero-engine-design-with-digital-twin/articleshow/93517416.cms?from=mdr",
   },
   {
     id: 3,
@@ -158,6 +161,7 @@ const newsItems = [
     imageAlt: "Godrej MoU",
     meta: "22 JAN 2026 • MUMBAI",
     description: "Godrej Aerospace and Paninian Technologies have signed a Memorandum of Understanding to jointly develop indigenous propulsion systems for next-generation unmanned combat aerial vehicles.",
+    link: "https://economictimes.indiatimes.com/tech/startups/indian-start-up-achieves-break-through-in-aero-engine-design-with-digital-twin/articleshow/93517416.cms?from=mdr",
   },
 ];
 

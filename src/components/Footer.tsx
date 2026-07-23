@@ -63,7 +63,7 @@ export default function Footer() {
       </div>
 
       {/* 3) Svayatt watermark — full width, ghost-like, clipped at bottom */}
-      <div className="w-full h-0 sm:h-0 md:h-[100px] lg:h-[410px] relative overflow-hidden hidden md:flex justify-center items-end">
+      <div className="w-full h-0 hidden lg:h-[410px] relative overflow-hidden hidden md:flex justify-center items-end">
         <img
           src="/svayatt-watermark-2.png"
           alt=""

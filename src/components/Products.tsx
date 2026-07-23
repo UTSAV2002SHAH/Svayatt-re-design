@@ -16,7 +16,7 @@ function MissionStatement() {
         </h2>
       </div>
       <div className="md:w-1/3 flex flex-col items-start gap-6">
-        <p className="text-sm md:text-base font-medium text-white leading-relaxed max-w-xs">
+        <p className="hidden md:block text-sm md:text-base font-medium text-white leading-relaxed max-w-xs">
           Redefining aerospace and defense engineering — fusing AI, simulation, and 3D intelligence into one digital twin platform for what comes next.
         </p>
         <button className="bg-white text-gray-600 hover:text-white font-bold text-xs uppercase px-8 py-3 tracking-wider rounded hover:bg-[#ff6343] transition-colors cursor-pointer">
